@@ -1,4 +1,5 @@
-import createRvClang from "./rvclang/rvclang-wasm.mjs";
+import createRvClang from "./rvclang/rvclang-wasm.mjs"
+import rvclangWasmUrl from './rvclang/rvclang-wasm.wasm?url'
 import loadBinutils from "@binutils-wasm/binutils"
 
 const encoder = new TextEncoder()
@@ -52,7 +53,13 @@ class RiscvToolchain {
         }
 
         let mod = await createRvClang({
-            locateFile: (name) => new URL(name, import.meta.url).href,
+            locateFile: (name) => {
+                if (name.endsWith(".wasm")) {
+                    return rvclangWasmUrl
+                }
+
+                return name
+            },
             print: stdout,
             printErr: stderr
         })
