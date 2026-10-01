@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@binutils-wasm/binutils": "^0.2.0",
+    "@binutils-wasm/gas": "^0.2.0",
+    "monaco-editor": "^0.56.0"
+  },
+  "name": "rveditor",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/editor/host_ui.js",
+  "devDependencies": {
+    "vite": "^8.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "build:gh": "vite build --mode gh-pages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Browser-based RISC-V C and ASM editor for Garry's Mod DHTML."
+}
