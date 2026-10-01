@@ -737,6 +737,7 @@ async function buildProject(project) {
     }
 
     toolchain.addArg("-I/project/include")
+    toolchain.addArg("-ffreestanding")
 
     appendBuildLog(`Compiling C Files...`)
 
